@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de Telecomunicaciones — Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="logo">📡</div>
+          <div class="brand-text">
+            <h1>Calculadora de Telecomunicaciones</h1>
+            <p>Aprende, experimenta y calcula con precisión profesional.</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#calculadora">Calculadora</a>
+          <a href="#aprendizaje">Aprendizaje</a>
+          <a href="#importancia">Importancia</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h2>Diseñada para estudiantes y profesionales</h2>
+          <p>
+            Una experiencia didáctica y escalable: agrega nuevas fórmulas sin
+            cambiar el diseño. Visualiza resultados en múltiples formatos (valor completo,
+            prefijos SI y notación científica).
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#calculadora">Probar ahora</a>
+            <a class="btn ghost" href="#aprendizaje">¿Cómo funciona?</a>
+          </div>
+        </div>
+        <div class="hero-card glass">
+          <div class="metric">
+            <div class="label">Confiabilidad</div>
+            <div class="value">99.99%</div>
+          </div>
+          <div class="metric">
+            <div class="label">Escalabilidad</div>
+            <div class="value">Modular</div>
+          </div>
+          <div class="metric">
+            <div class="label">Aprendizaje</div>
+            <div class="value">Guiado</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg"></div>
+    </section>
+
+    <main class="container main-grid" id="calculadora">
+      <section class="panel">
+        <h3>Selecciona una fórmula</h3>
+        <p class="muted">La interfaz es dinámica: al elegir una fórmula, verás los campos requeridos con prefijos SI.</p>
+        <div class="form-row">
+          <label for="formula">Fórmula</label>
+          <select id="formula"></select>
+        </div>
+
+        <div id="formula-meta" class="formula-meta"></div>
+
+        <div id="fields"></div>
+
+        <div class="actions">
+          <button id="btn-calc" class="btn primary">Calcular</button>
+          <button id="btn-clear" class="btn">Limpiar</button>
+          <button id="btn-plot" class="btn ghost">Ver gráfica</button>
+        </div>
+
+        <div id="result" class="result card"></div>
+        <div class="panel" style="margin-top:12px">
+          <canvas id="chart" height="140"></canvas>
+        </div>
+      </section>
+
+      <aside class="panel" id="aprendizaje">
+        <h3>Aprendizaje guiado</h3>
+        <p>
+          Cada fórmula incluye una explicación breve en lenguaje claro. Los campos están
+          etiquetados con sus unidades base para que internalices mejores prácticas de ingeniería.
+        </p>
+        <ul class="bullets">
+          <li><strong>Coherencia de unidades</strong> con prefijos SI.</li>
+          <li><strong>Resultados triformato</strong>: valor completo, prefijo SI y notación científica.</li>
+          <li><strong>Estructura modular</strong>: añade nuevas fórmulas sin tocar el diseño.</li>
+        </ul>
+      </aside>
+    </main>
+
+    <section class="container panels" id="importancia">
+      <article class="panel">
+        <h3>¿Para qué sirve esta calculadora?</h3>
+        <p>
+          Esta calculadora está pensada para resolver problemas fundamentales de las comunicaciones:
+          capacidad de canal (Shannon), análisis de ruido térmico, ancho de banda y métricas de desempeño.
+          Es útil en cursos de teoría de la información, comunicaciones analógicas y digitales, y diseño de enlaces.
+        </p>
+      </article>
+      <article class="panel">
+        <h3>Importancia para ingeniería y personas</h3>
+        <p>
+          Para ingenieros, acelera el prototipado y reduce errores de unidades. Para estudiantes y entusiastas,
+          ofrece una experiencia educativa clara que crea intuición sobre cómo varían las magnitudes.
+          La precisión y la pedagogía se combinan en una interfaz moderna.
+        </p>
+      </article>
+    </section>
+
+    <section class="container faq" id="faq">
+      <h3>Preguntas frecuentes</h3>
+      <details>
+        <summary>¿Cómo agrego nuevas fórmulas?</summary>
+        <p>Solo añade una entrada al listado del backend y el frontend la mostrará automáticamente.</p>
+      </details>
+      <details>
+        <summary>¿Puedo usarlo offline?</summary>
+        <p>La interfaz funciona localmente; necesitas correr la API en tu equipo.</p>
+      </details>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2025 Calculadora de Telecomunicaciones</span>
+        <span class="dot">•</span>
+        <a href="#">Privacidad</a>
+        <span class="dot">•</span>
+        <a href="#">Términos</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+
