@@ -15,26 +15,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 class CalculatePayload(BaseModel):
-    formula_id: str = Field(..., description="Identificador estable de la fórmula")
-    values: Dict[str, float] = Field(..., description="Valores numéricos en unidades base SI")
-
+    formula_id: str = Field(..., description="Identificador de la fórmula")
+    values: Dict[str, float] = Field(..., description="Valores numéricos en SI")
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
-
 @app.get("/prefixes")
 def prefixes():
     return PREFIXES
 
-
 @app.get("/formulas")
 def formulas():
     return list_formulas_for_api()
-
 
 @app.post("/calculate")
 def calculate(payload: CalculatePayload):
@@ -42,7 +37,3 @@ def calculate(payload: CalculatePayload):
         return calculate_by_id(payload.formula_id, payload.values)
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
-
-
-# Para ejecutar: uvicorn api:app --reload
-
